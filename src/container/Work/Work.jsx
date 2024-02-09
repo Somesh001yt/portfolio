@@ -57,6 +57,11 @@ const works = [
      information about each movie. This overview will 
      explore the architecture, features, and technologies used
       in building this project using HTML, CSS, and JavaScript.
+      Developed Movie Project is a web application designed 
+      to showcase a collection of movies, providing users with
+       information about each movie. This overview will 
+       explore the architecture, features, and technologies used
+        in building this project using HTML, CSS, and JavaScript.
       `,
     projectLink: "somesh001yt.github.io/Movies/",
     codeLink: "https://github.com/Somesh001yt/Movies",
@@ -64,6 +69,17 @@ const works = [
 ];
 
 const Work = () => {
+  
+  function truncateDescription(description, wordsCount) {
+    const words = description.split(' ');
+    if (words.length > wordsCount) {
+      return words.slice(0, wordsCount).join(' ') + '...';
+    } else {
+      return description;
+    }
+  }
+  
+
   return (
     <>
       <h2 className="head-text">Portfolio</h2>
@@ -115,7 +131,7 @@ const Work = () => {
                 className="p-text"
                 style={{ marginTop: 10, textAlign: "center" }}
               >
-                {work.description}
+                  {truncateDescription(work.description, 50)}
               </p>
             </div>
           </div>
